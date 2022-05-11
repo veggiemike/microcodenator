@@ -40,7 +40,16 @@ usage()
     echo "$(basename $0) - magical creator of ucode.img and narwhals"
     echo "Copyright (C) 2021-2022 Michael D Labriola <veggiemike@sourceruckus.org>"
     echo
+    echo "Microcodenator is a utility for creating a ucode.img file containing the correct"
+    echo "microcode for the host system."
+    echo
     echo "usage: `basename $0` IMGNAME"
+    echo
+    echo "  -h, --help                Show this help message and exit."
+    echo
+    echo "  -V, --version             Show version string and exit."
+    echo
+    echo "  -v, --verbose             Display extra output"
 }
 
 
@@ -54,8 +63,8 @@ usage()
 #       current positional arguments (e.g, $1, $2).
 #
 __opts=$(getopt -un $(basename $0) \
-    -o hv \
-    --long help,verbose -- $@)
+    -o hVv \
+    --long help,version,verbose -- $@)
 if [ $? != 0 ]; then
     echo
     usage
@@ -69,6 +78,10 @@ verbose=
 # parse the new positional arguments
 while true; do
     case "$1" in
+        -V|--version)
+            echo "Microcodenator $VERSION"
+            exit 0
+            ;;
         -v|--verbose)
             verbose=yes
             shift
