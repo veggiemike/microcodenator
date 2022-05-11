@@ -61,11 +61,7 @@ m4_foreach_w([P], NEEDED_PROGS,
 
 # warn if any "wanted" programs are missing
 AC_DEFUN([WANTED_PROGS],
-	 [dnl compressors
-	  gzip
-	  bzip2
-	  xz
-	  zstd
+	 [
 	 ])
 
 m4_foreach_w([P], WANTED_PROGS,
