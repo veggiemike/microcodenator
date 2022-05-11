@@ -1,0 +1,14 @@
+Package: microcodenator
+Version: __version__
+Section: utils
+Priority: optional
+Architecture: __arch__
+Installed-Size: __size__
+Depends: bash, cpio, findutils
+Replaces: ruckusrd (<< 0.18.0-1)
+#Breaks: ruckusrd (<< 0.18.0-1)
+Maintainer: Michael D Labriola <veggiemike@sourceruckus.org>
+Homepage: https://github.com/sourceruckus/microcodenator
+Description: Microcodenator - magical creator of ucode.img and narwhals
+ Microcodenator is a utility for creating a ucode.img file containing
+ the correct microcode for the host system.
