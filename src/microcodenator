@@ -10,6 +10,19 @@
 # microcode for the host system.
 
 
+# assume we're in the source tree if $PWD/microcodenator.sh.in exists
+if [ -f $(dirname $0)/microcodenator.sh.in ]; then
+    LIBDIR=$(realpath $(dirname $0))
+    CONFDIR=$LIBDIR
+else
+    LIBDIR=__LIBDIR__
+    CONFDIR=__CONFDIR__
+fi
+. $LIBDIR/microcodenator.sh
+[ -f $CONFDIR/microcodenator.conf ] && . $CONFDIR/microcodenator.conf
+[ -f ~/.microcodenator.conf ] && . ~/.microcodenator.conf
+
+
 decho()
 {
     if [ -n "$verbose" ]; then
