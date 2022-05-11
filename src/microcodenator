@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Microcodenator - magical creator of ucode.img and narwhals
+# Microcodenator - a super duper machine-specific ucode.img creator
 #
 # Copyright 2021-2022 Michael D Labriola <veggiemike@sourceruckus.org>
 #
@@ -37,7 +37,7 @@ usage()
         echo ERROR: $*
         echo
     fi
-    echo "$(basename $0) - magical creator of ucode.img and narwhals"
+    echo "$(basename $0) - a super duper machine-specific ucode.img creator"
     echo "Copyright (C) 2021-2022 Michael D Labriola <veggiemike@sourceruckus.org>"
     echo
     echo "Microcodenator is a utility for creating a ucode.img file containing the correct"

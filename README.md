@@ -1,5 +1,5 @@
-Microcodenator - magical creator of ucode.img and narwhals
-==========================================================
+Microcodenator - a super duper machine-specific ucode.img creator
+=================================================================
 
 Copyright 2021-2022 Michael D Labriola <veggiemike@sourceruckus.org>
 
@@ -11,5 +11,11 @@ correct microcode for the host system.
 Get the latest and greatest from https://github.com/sourceruckus/microcodenator.
 
 <pre>
-usage
+usage: microcodenator IMGNAME
+
+  -h, --help                Show this help message and exit.
+
+  -V, --version             Show version string and exit.
+
+  -v, --verbose             Display extra output
 </pre>
