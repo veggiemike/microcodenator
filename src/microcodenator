@@ -50,6 +50,8 @@ usage()
     echo "  -V, --version             Show version string and exit."
     echo
     echo "  -v, --verbose             Display extra output"
+    echo
+    echo "  -f, --force               Force overwrite existing file."
 }
 
 
@@ -63,8 +65,8 @@ usage()
 #       current positional arguments (e.g, $1, $2).
 #
 __opts=$(getopt -un $(basename $0) \
-    -o hVv \
-    --long help,version,verbose -- $@)
+    -o hVvf \
+    --long help,version,verbose,force -- $@)
 if [ $? != 0 ]; then
     echo
     usage
@@ -74,6 +76,8 @@ set -- $__opts
 
 # defaults
 verbose=
+allow_overwrite=
+
 
 # parse the new positional arguments
 while true; do
@@ -84,6 +88,10 @@ while true; do
             ;;
         -v|--verbose)
             verbose=yes
+            shift
+            ;;
+        -f|--force)
+            allow_overwrite=yes
             shift
             ;;
 	--)
@@ -105,8 +113,15 @@ if [ -z "$1" ]; then
 fi
 filename=$(realpath $1)
 
+# check for existing file
+if [ -e "$filename" -a -z "$allow_overwrite" ]; then
+    echo "Image $filename already exists.  Use -f to overwrite."
+    exit 1
+fi
+
 decho filename: $filename
 decho verbose: $verbose
+decho allow_overwrite: $allow_overwrite
 
 if [ -n "$verbose" ]; then
     cp="cp -v"

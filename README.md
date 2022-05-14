@@ -18,4 +18,6 @@ usage: microcodenator IMGNAME
   -V, --version             Show version string and exit.
 
   -v, --verbose             Display extra output
+
+  -f, --force               Force overwrite existing file.
 </pre>
