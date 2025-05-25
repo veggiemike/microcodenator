@@ -3,6 +3,13 @@
 For the latest and greatest, see
 https://github.com/sourceruckus/microcodenator/commits/master.
 
+* v1.0.1
+2025-05-25: Microcodenator v1.0.1
+
+- Replaced a couple bash-isms with equivalents that work in BusyBox's ash
+  shell.
+- Added "see also" to manpage.
+
 * v1.0.0
 Tagger: Michael D Labriola <veggiemike@sourceruckus.org>
 Date:   Sat May 14 01:48:35 EDT 2022

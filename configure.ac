@@ -2,7 +2,7 @@ AC_PREREQ([2.65])
 
 m4_define(microcodenator_major_version, 1)
 m4_define(microcodenator_minor_version, 0)
-m4_define(microcodenator_micro_version, 0)
+m4_define(microcodenator_micro_version, 1)
 m4_define(microcodenator_devtag, [])
 m4_ifnblank(microcodenator_devtag,
 	[m4_define(microcodenator_version, microcodenator_major_version.microcodenator_minor_version.microcodenator_micro_version-microcodenator_devtag)],
