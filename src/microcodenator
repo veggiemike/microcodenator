@@ -133,7 +133,7 @@ else
     mkdir="mkdir"
 fi
 
-tmpdir=$(mktemp -dt $(basename $0)-XXXX)
+tmpdir=$(mktemp -dt $(basename $0)-XXXXXX)
 decho tmpdir: $tmpdir
 cd $tmpdir
 
